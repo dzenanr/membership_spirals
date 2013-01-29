@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Member Add</title>
+  </head>
+  <body>
+    <element name="x-member-add" extends="span">
+      <template>
+        <content></content>
+        <div>
+          <label for="code">Code</label>
+          <input id="code" type="text"/>
+          <label for="password">Password</label>
+          <input id="password" type="password"/>
+          <label for="firstName">First Name</label>
+          <input id="firstName" type="text"/>
+          <label for="lastName">Last Name</label>
+          <input id="lastName" type="text"/>
+          <br/>
+          <button on-click="add()">Add</button>
+          <label id="message"></label>
+        </div>
+        <style>
+          button {
+            padding: 1px;
+            background: #ffcc99;
+            border-right: 1px solid #999;
+            border-bottom: 1px solid #999;
+            border-style: outset;
+            border-color: #d7b9c9;
+            font-weight: bold;
+            text-align: center;
+          }
+          div {
+            padding: 5px;
+          }
+          #message {
+            font-size: 14px;
+            background: lightyellow;
+          }
+        </style>
+      </template>
+      <script type="application/dart" src="member_add.dart"></script>
+    </element>
+  </body>
+</html>
