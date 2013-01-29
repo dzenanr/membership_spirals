@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Member Sign In</title>
+    <link rel="components" href="member_add.html">
+  </head>
+  <body>
+    <element name="x-member-sign-in" extends="span">
+      <template>
+        <div template instantiate="if showSignIn">
+          <label for="code">Code</label>
+          <input id="code" type="text"/>
+          <label for="password">Password</label>
+          <input id="password" type="password"/>
+          <br/>
+          <button on-click="signIn()">Sign In</button>
+          <button on-click="signUp()">Sign Up</button>
+          <label id="message"></label>
+          <div template instantiate="if showSignUp">
+            <x-member-add members="{{ members }}">
+              after add sign in
+            </x-member-add>
+          </div>
+        </div>
+        <div template instantiate="if showSignOut">
+          <button on-click="signOut()">Sign Out</button>
+        </div>
+        <style>
+          button {
+            padding: 1px;
+            background: #ffcc99;
+            border-right: 1px solid #999;
+            border-bottom: 1px solid #999;
+            border-style: outset;
+            border-color: #d7b9c9;
+            font-weight: bold;
+            text-align: center;
+          }
+          div {
+            padding: 5px;
+          }
+          #message {
+            font-size: 14px;
+            background: lightyellow;
+          }
+        </style>
+      </template>
+      <script type="application/dart" src="member_sign_in.dart"></script>
+    </element>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Member List Update</title>
+    <link rel="components" href="member_add.html">
+    <link rel="components" href="member_list.html">
+  </head>
+  <body>
+    <element name="x-member-list-update" extends="span">
+      <template>
+        <content></content>
+        <x-member-add members="{{ members }}"></x-member-add>
+        <x-member-list members="{{ members }}"></x-member-list>
+        <style>
+          button {
+            padding: 1px;
+            background: #ffcc99;
+            border-right: 1px solid #999;
+            border-bottom: 1px solid #999;
+            border-style: outset;
+            border-color: #d7b9c9;
+            font-weight: bold;
+            text-align: center;
+          }
+          div {
+            background: #eaeaea;
+            padding: 5px;
+          }
+          #message {
+            font-size: 14px;
+            background: lightyellow;
+          }
+        </style>
+      </template>
+      <script type="application/dart" src="member_list_update.dart"></script>
+    </element>
+  </body>
+</html>

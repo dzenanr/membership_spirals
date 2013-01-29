@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Member List</title>
+  </head>
+  <body>
+    <element name="x-member-list" extends="span">
+      <template>
+        <div>
+          <ul>
+            <template iterate="member in members.toList()">
+              <li>
+                {{ member.toString() }}
+              </li>
+            </template>
+          </ul>
+        </div>
+        <style>
+          ul {
+            font-size: 16px;
+            background: #dcdcdc;
+          }
+        </style>
+      </template>
+      <script type="application/dart" src="member_list.dart"></script>
+    </element>
+  </body>
+</html>
