@@ -1,0 +1,9 @@
+name: membership
+version: 0.0.8
+author: Dzenan Ridjanovic
+description: Spirals of the membership application with one concept and several web components.
+homepage: http://ondart.me/ui/index.md
+dependencies:
+  js: any
+  browser: any
+  web_ui: any

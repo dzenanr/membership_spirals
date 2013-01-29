@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Member Update by Admin</title>
+    <link rel="components" href="member_add.html">
+    <link rel="components" href="member_find_change_delete.html">
+    <link rel="components" href="member_list.html">
+  </head>
+  <body>
+    <element name="x-member-update-by-admin" extends="section">
+      <template>
+        <content></content>
+        <x-member-add members="{{ members }}"></x-member-add>
+        <x-member-find-change-delete members="{{ members }}">
+        </x-member-find-change-delete>
+        <x-member-list members="{{ members }}"></x-member-list>
+      </template>
+      <script type="application/dart" src="member_update_by_admin.dart">
+      </script>
+    </element>
+  </body>
+</html>

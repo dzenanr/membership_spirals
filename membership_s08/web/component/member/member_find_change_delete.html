@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Member Find Change Delete</title>
+  </head>
+  <body>
+    <element name="x-member-find-change-delete" extends="x-member-add">
+      <template>
+        <div>
+          <button on-click="find()">Find</button>
+          <button on-click="change()">Change</button>
+          <button on-click="delete()">Delete</button>
+        </div>
+      </template>
+      <script type="application/dart" src="member_find_change_delete.dart">
+      </script>
+    </element>
+  </body>
+</html>
