@@ -36,7 +36,7 @@ Next steps:
   git init
   git status
   git add .
-  git commit -m 'initial model version'
+  git commit -m 'initial version: spiral 00'
   git remote add origin https://github.com/dzenanr/membership_spirals.git
   git push -u origin master     
 
