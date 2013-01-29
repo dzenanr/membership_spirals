@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Membership</title>
+    <link rel="components" href="component/member/member_list_add.html">
+    <link rel="stylesheet" href="css/marker.css"/>
+    <link rel="stylesheet" href="css/page.css"/>
+  </head>
+  <body>
+    <h1>Membership</h1>
+
+    <x-member-list-add members="{{ members }}">
+      <span class="marker">Members</span>
+    </x-member-list-add>
+
+    <script type="application/dart" src="membership.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>
