@@ -9,8 +9,8 @@
     <element name="x-member-update" extends="span">
       <template>
         <div>
-          <label id="code-label"></label>
-          <label for="password">Password</label>
+          <span>{{ member.code }}</span>
+          <label for="password">password</label>
           <input id="password" type="password"/>
           <button on-click="change()">Change</button>
           <label id="message"></label>

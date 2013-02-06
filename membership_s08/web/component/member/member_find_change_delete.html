@@ -12,7 +12,14 @@
           <button on-click="find()">Find</button>
           <button on-click="change()">Change</button>
           <button on-click="delete()">Delete</button>
+          <label id="find-change-delete-message"></label>
         </div>
+        <style>
+          #find-change-delete-message {
+            font-size: 14px;
+            background: lightyellow;
+          }
+        </style>
       </template>
       <script type="application/dart" src="member_find_change_delete.dart">
       </script>

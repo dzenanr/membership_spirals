@@ -8,11 +8,11 @@ class MemberFindChangeDelete extends WebComponent {
   Members members;
 
   find() {
+    LabelElement message = query("#find-change-delete-message");
     InputElement code = query("#code");
     InputElement password = query("#password");
     InputElement firstName = query("#firstName");
     InputElement lastName = query("#lastName");
-    LabelElement message = query("#message");
     var error = false;
     message.text = '';
     if (code.value.trim() == '') {
@@ -33,39 +33,47 @@ class MemberFindChangeDelete extends WebComponent {
   }
 
   change() {
-    InputElement password = query("#password");
-    InputElement firstName = query("#firstName");
-    InputElement lastName = query("#lastName");
-    LabelElement message = query("#message");
-    var error = false;
-    message.text = '';
-    if (password.value.trim() == '') {
-      message.text = 'password is mandatory; ${message.text}';
-      error = true;
-    }
-    if (firstName.value.trim() == '') {
-      message.text = 'first name is mandatory; ${message.text}';
-      error = true;
-    }
-    if (lastName.value.trim() == '') {
-      message.text = 'last name is mandatory; ${message.text}';
-      error = true;
-    }
-    if (!error) {
-      member.password = password.value;
-      member.firstName = firstName.value;
-      member.lastName = lastName.value;
-      message.text = 'changed';
+    LabelElement message = query("#find-change-delete-message");
+    if (member != null) {
+      InputElement password = query("#password");
+      InputElement firstName = query("#firstName");
+      InputElement lastName = query("#lastName");
+      var error = false;
+      message.text = '';
+      if (password.value.trim() == '') {
+        message.text = 'password is mandatory; ${message.text}';
+        error = true;
+      }
+      if (firstName.value.trim() == '') {
+        message.text = 'first name is mandatory; ${message.text}';
+        error = true;
+      }
+      if (lastName.value.trim() == '') {
+        message.text = 'last name is mandatory; ${message.text}';
+        error = true;
+      }
+      if (!error) {
+        member.password = password.value;
+        member.firstName = firstName.value;
+        member.lastName = lastName.value;
+        message.text = 'changed';
+      }
+    } else {
+      message.text = 'first find a member';
     }
   }
 
   delete() {
-    LabelElement message = query("#message");
-    message.text = '';
-    if (members.remove(member)) {
-      message.text = 'deleted';
+    LabelElement message = query("#find-change-delete-message");
+    if (member != null) {
+      message.text = '';
+      if (members.remove(member)) {
+        message.text = 'deleted';
+      } else {
+        message.text = 'not deleted';
+      }
     } else {
-      message.text = 'not deleted';
+      message.text = 'first find a member';
     }
   }
 

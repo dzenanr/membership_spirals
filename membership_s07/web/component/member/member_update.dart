@@ -7,11 +7,6 @@ class MemberUpdate extends WebComponent {
   Member member;
   Members members;
 
-  MemberUpdate() {
-    LabelElement codeLabel = query("#code-label");
-    codeLabel.text = member.code;
-  }
-
   change() {
     InputElement password = query("#password");
     LabelElement message = query("#message");
