@@ -3,7 +3,9 @@ import 'dart:html';
 import 'package:membership/membership.dart';
 import 'package:web_ui/web_ui.dart';
 
-class MemberFindChangeDelete extends WebComponent {
+import 'member_add.dart';
+
+class MemberFindChangeDelete extends MemberAdd {
   Member member;
   Members members;
 

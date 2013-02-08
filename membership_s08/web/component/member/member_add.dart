@@ -1,3 +1,5 @@
+library member_add;
+
 import 'dart:html';
 
 import 'package:membership/membership.dart';
