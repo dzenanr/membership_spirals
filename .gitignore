@@ -1,5 +1,5 @@
-.buildlog
 packages
+*/.buildlog
 */web/out
 *.js
 *.js.deps
