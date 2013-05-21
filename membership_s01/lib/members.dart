@@ -15,4 +15,6 @@ class Members {
   add(Member member) {
     _members.add(member);
   }
+
+  List<Member> toList() => _members.toList();
 }

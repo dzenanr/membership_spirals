@@ -4,16 +4,16 @@
   <head>
     <meta charset="utf-8">
     <title>Membership</title>
-    <link rel="components" href="member_list.html">
     <link rel="stylesheet" href="css/list.css"/>
     <link rel="stylesheet" href="css/page.css"/>
+    <link rel="import" href="member_list.html">
   </head>
   <body>
     <h1>Members</h1>
 
     <ul id="members" class="target">
-      <template iterate="member in members">
-        <x-member-item member="{{ member }}"></x-member-item>
+      <template iterate="member in members.toList()">
+        <member-item member="{{ member }}"></member-item>
       </template>
     </ul>
 

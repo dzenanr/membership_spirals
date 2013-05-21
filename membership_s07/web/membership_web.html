@@ -4,13 +4,13 @@
   <head>
     <meta charset="utf-8">
     <title>Membership</title>
-    <link rel="components" href="component/member/member_sign_in_list.html">
     <link rel="stylesheet" href="css/page.css"/>
+    <link rel="import" href="component/member/member_sign_in_list.html">
   </head>
   <body>
     <h1>Membership</h1>
 
-    <x-member-sign-in-list members="{{ members }}"></x-member-sign-in-list>
+    <member-sign-in-list members="{{ members }}"></member-sign-in-list>
 
     <script type="application/dart" src="membership_web.dart"></script>
     <script src="packages/browser/dart.js"></script>

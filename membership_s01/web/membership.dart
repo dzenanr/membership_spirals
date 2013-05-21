@@ -1,4 +1,3 @@
-import 'dart:html';
 import 'package:membership/members.dart';
 
 var members = new Members();

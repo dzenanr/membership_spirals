@@ -5,7 +5,7 @@ class MemberSignInList extends WebComponent {
   Members members;
 
   bool get adminSignedIn {
-    var signInComponent = document.query('x-member-sign-in').xtag;
+    var signInComponent = document.query('#member-sign-in').xtag;
     Member member = signInComponent.signedInMember;
     if (member != null && member.admin) {
       return true;
@@ -14,7 +14,7 @@ class MemberSignInList extends WebComponent {
   }
 
   bool get memberSignedIn {
-    var signInComponent = document.query('x-member-sign-in').xtag;
+    var signInComponent = document.query('#member-sign-in').xtag;
     Member member = signInComponent.signedInMember;
     if (member != null && !member.admin) {
       return true;

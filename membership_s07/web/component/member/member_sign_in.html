@@ -4,11 +4,11 @@
   <head>
     <meta charset="utf-8">
     <title>Member Sign In</title>
-    <link rel="components" href="member_add.html">
-    <link rel="components" href="member_update.html">
+    <link rel="import" href="member_add.html">
+    <link rel="import" href="member_update.html">
   </head>
   <body>
-    <element name="x-member-sign-in" extends="span">
+    <element name="member-sign-in" extends="span">
       <template>
         <div template instantiate="if showSignIn">
           <label for="sign-in-code">Code</label>
@@ -20,9 +20,9 @@
           <button on-click="signUp()">Sign Up</button>
           <label id="sign-in-message"></label>
           <div template instantiate="if showSignUp">
-            <x-member-add members="{{ members }}">
+            <member-add members="{{ members }}">
               after add sign in
-            </x-member-add>
+            </member-add>
           </div>
         </div>
         <div template instantiate="if showSignOut">
@@ -30,8 +30,9 @@
           <button on-click="signOut()">Sign Out</button>
         </div>
         <div template instantiate="if showMember">
-          <x-member-update member="{{ signedInMember }}" members="{{ members }}">
-          </x-member-update>
+          <member-update
+            member="{{ signedInMember }}" members="{{ members }}">
+          </member-update>
         </div>
         <style>
           button {

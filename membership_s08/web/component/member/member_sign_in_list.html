@@ -4,20 +4,23 @@
   <head>
     <meta charset="utf-8">
     <title>Member Sign In List</title>
-    <link rel="components" href="member_sign_in.html">
-    <link rel="components" href="member_update_by_admin.html">
-    <link rel="components" href="member_list.html">
+    <link rel="import" href="member_sign_in.html">
+    <link rel="import" href="member_update_by_admin.html">
+    <link rel="import" href="member_list.html">
   </head>
   <body>
-    <element name="x-member-sign-in-list" extends="span">
+    <element name="member-sign-in-list" extends="span">
       <template>
-        <x-member-sign-in members="{{ members }}"></x-member-sign-in>
+        <member-sign-in
+          id="member-sign-in" members="{{ members }}">
+        </member-sign-in>
         <div template instantiate="if adminSignedIn">
-          <x-member-update-by-admin members="{{ members }}">
-          </x-member-update-by-admin>
+          <member-update-by-admin
+            members="{{ members }}">
+          </member-update-by-admin>
         </div>
         <div template instantiate="if memberSignedIn">
-          <x-member-list members="{{ members }}"></x-member-list>
+          <member-list members="{{ members }}"></member-list>
         </div>
       </template>
       <script type="application/dart" src="member_sign_in_list.dart"></script>

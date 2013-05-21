@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <title>Member Sign In</title>
-    <link rel="components" href="member_add.html">
+    <link rel="import" href="member_add.html">
   </head>
   <body>
-    <element name="x-member-sign-in" extends="span">
+    <element name="member-sign-in" extends="span">
       <template>
         <div template instantiate="if showSignIn">
           <label for="code">Code</label>
@@ -19,9 +19,9 @@
           <button on-click="signUp()">Sign Up</button>
           <label id="message"></label>
           <div template instantiate="if showSignUp">
-            <x-member-add members="{{ members }}">
+            <member-add members="{{ members }}">
               after add sign in
-            </x-member-add>
+            </member-add>
           </div>
         </div>
         <div template instantiate="if showSignOut">
