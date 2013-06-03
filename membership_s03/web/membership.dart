@@ -1,5 +1,7 @@
 import 'package:membership/membership.dart';
+import 'package:web_ui/web_ui.dart';
 
+@observable // can be removed after watchers are out
 var members = new Members();
 
 main() {
@@ -19,4 +21,6 @@ main() {
   members.add(member1);
   members.add(member2);
   members.add(member3);
+
+  members.internalList = toObservable(members.internalList);
 }

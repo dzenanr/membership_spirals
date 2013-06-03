@@ -45,5 +45,4 @@ class MemberAdd extends WebComponent {
       }
     }
   }
-
 }

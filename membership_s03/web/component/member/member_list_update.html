@@ -20,7 +20,7 @@
         <input id="lastName" type="text"/>
         <button on-click="addMember()">Add Member</button>
         <br/><br/>
-        <template iterate="member in members.toList()">
+        <template iterate="member in members.internalList">
           <li>
             {{ member.code }}: {{ member.lastName }}, {{ member.firstName }}
           </li>

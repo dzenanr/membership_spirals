@@ -6,15 +6,12 @@
     <title>Membership</title>
     <link rel="stylesheet" href="css/list.css"/>
     <link rel="stylesheet" href="css/page.css"/>
-    <link rel="import" href="member_list.html">
   </head>
   <body>
     <h1>Members</h1>
 
-    <ul id="members" class="target">
-      <template iterate="member in members.toList()">
-        <x-member-item member="{{ member }}"></x-member-item>
-      </template>
+    <ul id="members" class="target" template repeat="member in members.toList()">
+      <li>{{ member.code }}</li>
     </ul>
 
     <script type="application/dart" src="membership.dart"></script>

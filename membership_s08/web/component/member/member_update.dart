@@ -18,15 +18,14 @@ class MemberUpdate extends WebComponent {
     }
     if (!error) {
       member.password = password.value;
-      var signInComponent = document.query('#member-sign-in').xtag;
-      signInComponent.showMember = false;
+      var signinComponent = query('#member-signin').xtag;
+      signinComponent.showMember = false;
     }
   }
 
   delete() {
     members.remove(member);
-    var signInComponent = document.query('#member-sign-in').xtag;
-    signInComponent.signOut();
+    var signinComponent = query('#member-signin').xtag;
+    signinComponent.signout();
   }
-
 }

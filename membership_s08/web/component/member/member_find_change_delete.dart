@@ -37,11 +37,17 @@ class MemberFindChangeDelete extends MemberAdd {
   change() {
     LabelElement message = query("#find-change-delete-message");
     if (member != null) {
+      InputElement code = query("#code");
       InputElement password = query("#password");
       InputElement firstName = query("#firstName");
       InputElement lastName = query("#lastName");
       var error = false;
       message.text = '';
+      if (member.code != code.value) {
+        message.text = 'no edit for code; ${message.text}';
+        code.value = member.code;
+        error = true;
+      }
       if (password.value.trim() == '') {
         message.text = 'password is mandatory; ${message.text}';
         error = true;
@@ -59,6 +65,7 @@ class MemberFindChangeDelete extends MemberAdd {
         member.firstName = firstName.value;
         member.lastName = lastName.value;
         message.text = 'changed';
+        members.order();
       }
     } else {
       message.text = 'first find a member';
@@ -78,5 +85,4 @@ class MemberFindChangeDelete extends MemberAdd {
       message.text = 'first find a member';
     }
   }
-
 }

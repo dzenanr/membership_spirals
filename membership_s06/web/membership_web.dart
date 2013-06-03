@@ -1,11 +1,9 @@
-import 'package:web_ui/web_ui.dart';
 import 'package:membership/membership.dart';
+import 'package:web_ui/web_ui.dart';
 
 Members members;
 
 main() {
-  useShadowDom = true;
-
   members = new Members();
   var administrator = new Member('dr');
   administrator.password = 'dr';
@@ -13,4 +11,6 @@ main() {
   administrator.lastName = 'Ridjanovic';
   administrator.admin = true;
   members.add(administrator);
+
+  members.internalList = toObservable(members.internalList);
 }

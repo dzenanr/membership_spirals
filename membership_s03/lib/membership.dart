@@ -19,6 +19,9 @@ class Members {
 
   Iterator<Member> get iterator => _members.iterator;
 
+  List<Member> get internalList => _members;
+  set internalList(List<Member> observableList) => _members = observableList;
+
   add(Member member) {
     _members.add(member);
   }

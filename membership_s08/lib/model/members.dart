@@ -42,6 +42,9 @@ class Members {
 
   Iterator<Member> get iterator => _members.iterator;
 
+  List<Member> get internalList => _members;
+  set internalList(List<Member> observableList) => _members = observableList;
+
   bool add(Member member) {
     if (contain(member.code)) {
       return false;
@@ -78,7 +81,7 @@ class Members {
       }
     }
   }
-  
+
   bool remove(Member member) {
     for (Member m in _members) {
       if (m.code == member.code) {

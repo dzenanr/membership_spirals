@@ -1,4 +1,5 @@
 import 'package:membership/membership.dart';
+import 'package:web_ui/web_ui.dart';
 
 Members members;
 
@@ -18,4 +19,5 @@ main() {
   members.add(member);
 
   members.order();
+  members.internalList = toObservable(members.internalList);
 }

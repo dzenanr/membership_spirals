@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <title>Sample app</title>
     <link rel="stylesheet" href="membership_s00.css">
-    
+
     <!-- import the click-counter -->
-    <link rel="components" href="xclickcounter.html">
+    <link rel="import" href="clickcounter.html">
   </head>
   <body>
     <h1>Membership s00</h1>
-    
+
     <p>Hello world from Dart!</p>
-    
+
     <div id="sample_container_id">
-      <div is="x-click-counter" id="click_counter" count="{{startingCount}}"></div>
+      <div is="click-counter" id="click_counter" count="{{startingCount}}"></div>
     </div>
 
     <script type="application/dart" src="membership_s00.dart"></script>

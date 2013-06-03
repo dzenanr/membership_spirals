@@ -3,21 +3,23 @@ import 'dart:html';
 import 'package:membership/membership.dart';
 import 'package:web_ui/web_ui.dart';
 
-class MemberSignIn extends WebComponent {
+class MemberSignin extends WebComponent {
   Members members;
   @observable
-  Member signedInMember;
+  Member signedinMember;
   @observable
-  bool showSignIn = true;
+  bool showSignin = true;
   @observable
-  bool showSignUp = false;
+  bool showSignup = false;
   @observable
-  bool showSignOut = false;
+  bool showMember = false;
+  @observable
+  bool showSignout = false;
 
-  signIn() {
+  signin() {
     InputElement code = query("#signin-code");
     InputElement password = query("#signin-password");
-    LabelElement message = query("#message");
+    LabelElement message = query("#signin-message");
     message.text = '';
     var error = false;
     if (code.value.trim() == '') {
@@ -32,10 +34,10 @@ class MemberSignIn extends WebComponent {
       var member = members.find(code.value.trim());
       if (member != null) {
         if (member.password == password.value.trim()) {
-          signedInMember = member;
-          showSignIn = false;
-          showSignUp = false;
-          showSignOut = true;
+          signedinMember = member;
+          showSignin = false;
+          showSignup = false;
+          showSignout = true;
         } else {
           message.text = 'not valid sign in';
         }
@@ -45,16 +47,21 @@ class MemberSignIn extends WebComponent {
     }
   }
 
-  signUp() {
-    LabelElement message = query("#message");
+  signup() {
+    LabelElement message = query("#signin-message");
     message.text = '';
-    showSignUp = true;
+    showSignup = true;
   }
 
-  signOut() {
-    signedInMember = null;
-    showSignIn = true;
-    showSignUp = false;
-    showSignOut = false;
+  member() {
+    showMember = true;
+  }
+
+  signout() {
+    signedinMember = null;
+    showSignin = true;
+    showSignup = false;
+    showMember = false;
+    showSignout = false;
   }
 }

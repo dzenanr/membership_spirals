@@ -5,27 +5,34 @@
     <meta charset="utf-8">
     <title>Member Sign In</title>
     <link rel="import" href="member_add.html">
+    <link rel="import" href="member_update.html">
   </head>
   <body>
-    <element name="member-sign-in" extends="span">
+    <element name="member-signin" extends="span">
       <template>
-        <div template if="showSignIn">
+        <div template if="showSignin">
           <label for="signin-code">Code</label>
           <input id="signin-code" type="text"/>
           <label for="signin-password">Password</label>
           <input id="signin-password" type="password"/>
           <br/>
-          <button on-click="signIn()">Sign In</button>
-          <button on-click="signUp()">Sign Up</button>
-          <label id="message"></label>
-          <div template if="showSignUp">
+          <button on-click="signin()">Signin</button>
+          <button on-click="signup()">Signup</button>
+          <label id="signin-message"></label>
+          <div template if="showSignup">
             <member-add members="{{ members }}">
               after add sign in
             </member-add>
           </div>
         </div>
-        <div template if="showSignOut">
-          <button on-click="signOut()">Sign Out</button>
+        <div template if="showSignout">
+          <button on-click="member()">{{ signedinMember.code }}</button>
+          <button on-click="signout()">Signout</button>
+        </div>
+        <div template if="showMember">
+          <member-update
+            member="{{ signedinMember }}" members="{{ members }}">
+          </member-update>
         </div>
         <style>
           button {
@@ -41,13 +48,13 @@
           div {
             padding: 5px;
           }
-          #message {
+          #signin-message {
             font-size: 14px;
             background: lightyellow;
           }
         </style>
       </template>
-      <script type="application/dart" src="member_sign_in.dart"></script>
+      <script type="application/dart" src="member_signin.dart"></script>
     </element>
   </body>
 </html>

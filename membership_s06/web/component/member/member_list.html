@@ -10,7 +10,7 @@
       <template>
         <div>
           <ul>
-            <template iterate="member in members.toList()">
+            <template repeat="member in members.internalList">
               <li>
                 {{ member.toString() }}
               </li>

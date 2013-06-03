@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Member Sign In List</title>
+    <link rel="import" href="member_signin.html">
+    <link rel="import" href="member_list_update.html">
+    <link rel="import" href="member_list.html">
+  </head>
+  <body>
+    <element name="member-signin-list" extends="span">
+      <template>
+        <member-signin
+          id="member-signin" members="{{ members }}">
+        </member-signin>
+        <div template if="adminSignedin">
+          <member-list-update members="{{ members }}"></member-list-update>
+        </div>
+        <div template if="memberSignedin">
+          <member-list members="{{ members }}"></member-list>
+        </div>
+      </template>
+      <script type="application/dart" src="member_signin_list.dart"></script>
+    </element>
+  </body>
+</html>
