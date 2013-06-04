@@ -3,7 +3,9 @@ part of membership;
 class Member {
   String code;
   String password = '';
+  @observable
   String firstName;
+  @observable
   String lastName;
   bool admin = false;
 
