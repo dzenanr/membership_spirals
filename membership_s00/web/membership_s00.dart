@@ -1,5 +1,3 @@
-import 'dart:html';
-import 'package:web_ui/web_ui.dart';
 
 int startingCount = 5; // initial value for click-counter
 
